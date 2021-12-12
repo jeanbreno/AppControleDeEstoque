@@ -4,17 +4,20 @@ public abstract class Roupa {
 	
 	private String descricao;
 	private float valor;
-	private Boolean disponibilidade;
+	private String disponibilidade;
 	private String tamanho;
+	private int quantidade;
 	
-	public Roupa(String descricao, float valor, Boolean disponibilidade, String tamanho) {
+	public Roupa(String descricao, float valor, String disponibilidade, String tamanho, int quantidade) {
 		this.descricao = descricao;
 		this.valor = valor;
 		this.disponibilidade = disponibilidade;
 		this.tamanho = tamanho;
+		this.quantidade = quantidade;
 	}
 	
-	public abstract float calcularValorPedido();
+	public abstract float calcularValorTotalDoItem();
+	public abstract float calcularQuantidadeDoItem();
 	
 	@Override
 	public String toString() {
@@ -28,7 +31,11 @@ public abstract class Roupa {
 		sb.append(" - ");
 		sb.append(valor);
 		sb.append(" - ");
-		sb.append(this.calcularValorPedido());
+		sb.append(quantidade);
+		sb.append(" - ");
+		sb.append(this.calcularValorTotalDoItem());
+		sb.append(" - ");
+		sb.append(this.calcularQuantidadeDoItem());
 		
 		return sb.toString();
 	}
@@ -41,13 +48,16 @@ public abstract class Roupa {
 		return valor;
 	}
 
-	public Boolean getDisponibilidade() {
+	public String getDisponibilidade() {
 		return disponibilidade;
 	}
 
 	public String getTamanho() {
 		return tamanho;
 	}
-	
+
+	public int getQuantidade() {
+		return quantidade;
+	}
 	
 }
