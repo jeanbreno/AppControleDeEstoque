@@ -2,12 +2,14 @@ package erp.controle.estoque.model.domain;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class Pedido {
 	
 	private String numeroPedido;
 	private LocalDateTime data;
 	private Loja loja;
+	private List<Roupa> roupas;
 	
 	public Pedido() {
 		this.numeroPedido = "Pedido #####";
@@ -17,12 +19,17 @@ public class Pedido {
 	@Override
 	public String toString() {
 		
+		for (int i = 0; i < roupas.size() ; i++) {
+			System.out.println("Pedido "+ (i+1) + " : " + roupas.get(i));
+		}
+		
 		DateTimeFormatter formataData = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 		
-		return String.format("%s - %s : %s ",
+		return String.format("%s - %s - %s - %d",
 				this.data.format(formataData),
 				this.numeroPedido,
-				this.loja
+				this.loja,
+				roupas.size()
 				);
 	}
 
@@ -45,6 +52,12 @@ public class Pedido {
 	public void setLoja(Loja loja) {
 		this.loja = loja;
 	}
-	
-	
+
+	public List<Roupa> getRoupas() {
+		return roupas;
+	}
+
+	public void setRoupas(List<Roupa> roupas) {
+		this.roupas = roupas;
+	}
 }
