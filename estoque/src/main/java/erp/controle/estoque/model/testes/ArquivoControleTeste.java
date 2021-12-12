@@ -18,7 +18,12 @@ import erp.controle.estoque.exceptions.NomeInvalidoException;
 import erp.controle.estoque.exceptions.QuantidadeInvalidaException;
 import erp.controle.estoque.exceptions.TamanhoInvalidoException;
 import erp.controle.estoque.exceptions.ValorInvalidoException;
-import erp.controle.estoque.model.domain.*;
+import erp.controle.estoque.model.domain.Pedido;
+import erp.controle.estoque.model.domain.Calca;
+import erp.controle.estoque.model.domain.Camisa;
+import erp.controle.estoque.model.domain.Casaco;
+import erp.controle.estoque.model.domain.Loja;
+import erp.controle.estoque.model.domain.Roupa;
 
 public class ArquivoControleTeste {
 
@@ -122,6 +127,7 @@ public class ArquivoControleTeste {
 				try {
 					
 					pedido.relatorio();
+					
 					escrita.write(pedido.obterLinhaGravacaoArquivo());		
 					
 					System.out.println("# Quantidade de erros no processamento: " + inconsistencias.size());
