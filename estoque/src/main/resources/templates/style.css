@@ -1,0 +1,22 @@
+@charset "ISO-8859-1";
+
+.button {
+    margin: 10px;
+    height: 50px;
+    padding: 10px 10px 10px 10px;
+    color:dodgerblue;
+    font-size:18px;
+    text-align:center;
+    border-radius:30px;
+    border:3px solid dodgerblue;
+    box-shadow: inset 50 2px 3px 0 , inset 0 -3px 6px 0 rgba(0,0,0,.2), 0 3px 2px 0 rgba(0,0,0,.2);
+    background-image: linear-gradient(0deg, dodgerblue, white 100%);
+    
+}
+
+.foto_perfil {
+    position:inherit;
+    margin: -90px 90px 15px 15px;
+    border: 1px solid black;
+    border-radius: 50%;
+}

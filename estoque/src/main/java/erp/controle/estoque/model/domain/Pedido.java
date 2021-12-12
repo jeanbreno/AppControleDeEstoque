@@ -11,7 +11,7 @@ public class Pedido {
 	private Loja loja;
 	private List<Roupa> roupas;
 	
-	public Pedido() {
+	public Pedido()  {
 		this.numeroPedido = "Pedido #####";
 		this.data = LocalDateTime.now();
 	}

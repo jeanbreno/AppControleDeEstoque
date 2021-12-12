@@ -9,11 +9,5 @@ public class LojaTeste {
 	Loja loja = new Loja("Mundo das Roupas", "3341-9822", "90.985.964/0001-22");
 	System.out.println(loja);
 	
-		
-		
-		
-		
-		
-		
 	}
 }

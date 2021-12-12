@@ -1,12 +1,16 @@
 package erp.controle.estoque.model.domain;
 
+import erp.controle.estoque.exceptions.QuantidadeInvalidaException;
+import erp.controle.estoque.exceptions.TamanhoInvalidoException;
+import erp.controle.estoque.exceptions.ValorInvalidoException;
+
 public class Camisa extends Roupa {
 	
 	private String marca;
 	private boolean especial;
 	private String secao;
 	
-	public Camisa(String descricao, float valor, String disponibilidade, String tamanho, int quantidade) {
+	public Camisa(String descricao, float valor, String disponibilidade, String tamanho, int quantidade) throws ValorInvalidoException, TamanhoInvalidoException, QuantidadeInvalidaException {
 		super(descricao, valor, disponibilidade, tamanho, quantidade);
 
 	}

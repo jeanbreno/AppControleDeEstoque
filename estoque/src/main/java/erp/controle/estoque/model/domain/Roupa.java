@@ -1,5 +1,9 @@
 package erp.controle.estoque.model.domain;
 
+import erp.controle.estoque.exceptions.QuantidadeInvalidaException;
+import erp.controle.estoque.exceptions.TamanhoInvalidoException;
+import erp.controle.estoque.exceptions.ValorInvalidoException;
+
 public abstract class Roupa {
 	
 	private String descricao;
@@ -8,7 +12,24 @@ public abstract class Roupa {
 	private String tamanho;
 	private int quantidade;
 	
-	public Roupa(String descricao, float valor, String disponibilidade, String tamanho, int quantidade) {
+	public Roupa(String descricao, float valor, String disponibilidade, String tamanho, int quantidade) throws ValorInvalidoException, TamanhoInvalidoException, QuantidadeInvalidaException {
+		
+		if(valor == 0) {
+			throw new ValorInvalidoException("Não é possível cadastrar item com o campo Valor igual a zero.");
+		}
+		if(valor < 0) {
+			throw new ValorInvalidoException("Não é possível cadastrar item com o campo Valor menor que zero.");
+		}
+		if(tamanho == null) {
+			throw new TamanhoInvalidoException("Não é possível cadastrar item com o campo Tamanho nulo.");
+		}
+		if(quantidade == 0) {
+			throw new QuantidadeInvalidaException("Não é possível cadastrar item com o campo Quantidade igual a zero");
+		}
+		if(quantidade < 0) {
+			throw new QuantidadeInvalidaException("Não é possível cadastrar item com o campo Quantidade menor que zero");
+		}
+		
 		this.descricao = descricao;
 		this.valor = valor;
 		this.disponibilidade = disponibilidade;

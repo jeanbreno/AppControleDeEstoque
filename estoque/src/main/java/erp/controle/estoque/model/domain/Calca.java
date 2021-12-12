@@ -1,5 +1,9 @@
 package erp.controle.estoque.model.domain;
 
+import erp.controle.estoque.exceptions.QuantidadeInvalidaException;
+import erp.controle.estoque.exceptions.TamanhoInvalidoException;
+import erp.controle.estoque.exceptions.ValorInvalidoException;
+
 public class Calca extends Roupa {
 
 	private String marca;
@@ -8,7 +12,7 @@ public class Calca extends Roupa {
 	private String estilo;
 	private boolean comCinto;
 	
-	public Calca(String descricao, float valor, String disponibilidade, String tamanho, int quantidade) {
+	public Calca(String descricao, float valor, String disponibilidade, String tamanho, int quantidade) throws ValorInvalidoException, TamanhoInvalidoException, QuantidadeInvalidaException {
 		super(descricao, valor, disponibilidade, tamanho, quantidade);
 	}
 
