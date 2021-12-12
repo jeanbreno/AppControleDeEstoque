@@ -9,7 +9,7 @@ public class PedidoTeste {
 		Loja loja = new Loja("Mundo das Roupas", "3341-9822", "90.985.964/0001-22");
 		
 		Pedido pedido = new Pedido();
-		pedido.setDescricao("Pedido 98928");
+		pedido.setNumeroPedido("Pedido 98928");
 		pedido.setLoja(loja);
 		System.out.println(pedido);
 	}
