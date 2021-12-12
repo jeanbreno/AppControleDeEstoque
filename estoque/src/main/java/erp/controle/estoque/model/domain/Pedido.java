@@ -9,13 +9,11 @@ public class Pedido {
 	private LocalDateTime data;
 	private Loja loja;
 	
-	
 	public Pedido() {
 		this.numeroPedido = "Pedido #####";
 		this.data = LocalDateTime.now();
 	}
 
-	
 	@Override
 	public String toString() {
 		
@@ -28,27 +26,21 @@ public class Pedido {
 				);
 	}
 
-
-
 	public String getNumeroPedido() {
 		return numeroPedido;
 	}
-
 
 	public void setNumeroPedido(String numeroPedido) {
 		this.numeroPedido = numeroPedido;
 	}
 
-
 	public LocalDateTime getData() {
 		return data;
 	}
 
-
 	public Loja getLoja() {
 		return loja;
 	}
-
 
 	public void setLoja(Loja loja) {
 		this.loja = loja;

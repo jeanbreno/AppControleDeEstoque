@@ -1,5 +1,6 @@
 package erp.controle.estoque.model.testes;
 
+import erp.controle.estoque.model.domain.Calca;
 import erp.controle.estoque.model.domain.Camisa;
 
 //import erp.controle.estoque.model.domain.Roupa;
@@ -14,6 +15,13 @@ public class RoupaTeste {
 		esporte.setSecao("Adulto Esporte");
 		System.out.println(esporte);
 		
+		Calca skinny = new Calca("Calca Skinny", 31, "2 dias", "44", 9);
+		skinny.setMarca("Riachuelo");
+		skinny.setEspecial(false);
+		skinny.setComCinto(false);
+		skinny.setSecao("Jeans Skinny Normal");
+		skinny.setEstilo("Skinny");
+		System.out.println(skinny);
 	}
 
 }
