@@ -44,15 +44,15 @@ public abstract class Roupa {
 	public String toString() {
 		
 		StringBuilder sb = new StringBuilder();
-		sb.append(disponibilidade);
-		sb.append(" - ");
 		sb.append(descricao);
-		sb.append(" - ");
-		sb.append(tamanho);
 		sb.append(" - ");
 		sb.append(valor);
 		sb.append(" - ");
+		sb.append(tamanho);
+		sb.append(" - ");
 		sb.append(quantidade);
+		sb.append(" - ");
+		sb.append(disponibilidade);
 		sb.append(" - ");
 		sb.append(this.calcularValorTotalDoItem());
 		sb.append(" - ");

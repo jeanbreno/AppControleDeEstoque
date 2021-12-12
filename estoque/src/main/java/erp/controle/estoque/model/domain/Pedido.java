@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import erp.controle.estoque.exceptions.LojaNulaException;
+import erp.controle.estoque.exceptions.NaoExisteRoupasException;
+
 public class Pedido {
 	
 	private String numeroPedido;
@@ -11,17 +14,45 @@ public class Pedido {
 	private Loja loja;
 	private List<Roupa> roupas;
 	
-	public Pedido()  {
+	public Pedido(Loja loja) throws LojaNulaException  {
+		
+		if(loja == null) {
+			throw new LojaNulaException("Não é possível seguir sem uma loja vinculada ao pedido.");
+		}
+		
 		this.numeroPedido = "Pedido #####";
 		this.data = LocalDateTime.now();
+		this.loja = loja;
+	}
+	
+	public void relatorio() throws NaoExisteRoupasException {
+		
+		if(roupas == null) {
+			throw new NaoExisteRoupasException("Não existem roupas associadas ao pedido(Pedido não associado a uma lista de pedidos).");
+		}
+		
+		if(roupas.size() == 0) {
+			throw new NaoExisteRoupasException("Não existem roupas associadas ao pedido(Lista de pedidos está vazia).");
+		}
+		
+		System.out.println("Relatório: ");
+		System.out.println(this);
+		System.out.println("- Pedidos ");
+		for(Roupa rp : roupas) {
+			System.out.println(" # " + rp);
+		}
 	}
 
 	@Override
 	public String toString() {
 		
-		for (int i = 0; i < roupas.size() ; i++) {
-			System.out.println("Pedido "+ (i+1) + " : " + roupas.get(i));
-		}
+		int qtdRoupas = roupas != null ? roupas.size() : 0;
+		
+//		if(qtdRoupas > 0) {
+//			for (int i = 0; i < roupas.size() ; i++) {
+//				System.out.println("Pedido "+ (i+1) + " : " + roupas.get(i));
+//			}
+//		}
 		
 		DateTimeFormatter formataData = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 		
@@ -29,7 +60,7 @@ public class Pedido {
 				this.data.format(formataData),
 				this.numeroPedido,
 				this.loja,
-				roupas.size()
+				qtdRoupas
 				);
 	}
 
@@ -47,10 +78,6 @@ public class Pedido {
 
 	public Loja getLoja() {
 		return loja;
-	}
-
-	public void setLoja(Loja loja) {
-		this.loja = loja;
 	}
 
 	public List<Roupa> getRoupas() {

@@ -12,7 +12,7 @@
 		        <button class="button"><a href="https://github.com/jeanbreno/AppControleDeEstoque" title="projeto" target="_blank"> Repositório do Projeto</a></button>
 		    </menu>
 		</header>
-		<h1>Loja Mundo das Roupas</h1>
+		<h1>ERP - Controle de Estoque para loja de roupa</h1>
 		<hr>
 		  <section>
 		       <article>
