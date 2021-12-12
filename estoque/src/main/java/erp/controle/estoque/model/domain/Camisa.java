@@ -10,6 +10,8 @@ public class Camisa extends Roupa {
 	private boolean especial;
 	private String secao;
 	
+	String delimitador = ";";
+	
 	public Camisa(String descricao, float valor, String disponibilidade, String tamanho, int quantidade) throws ValorInvalidoException, TamanhoInvalidoException, QuantidadeInvalidaException {
 		super(descricao, valor, disponibilidade, tamanho, quantidade);
 
@@ -32,11 +34,11 @@ public class Camisa extends Roupa {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
-		sb.append(" - ");
+		sb.append(delimitador);
 		sb.append(marca);
-		sb.append(" - ");
-		sb.append(especial);
-		sb.append(" - ");
+		sb.append(delimitador);
+		sb.append(especial ? "Especial":"Nao Especial");
+		sb.append(delimitador);
 		sb.append(secao);
 		
 		return sb.toString();

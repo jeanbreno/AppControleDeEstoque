@@ -12,6 +12,8 @@ public class Calca extends Roupa {
 	private String estilo;
 	private boolean comCinto;
 	
+	String delimitador = ";";
+	
 	public Calca(String descricao, float valor, String disponibilidade, String tamanho, int quantidade) throws ValorInvalidoException, TamanhoInvalidoException, QuantidadeInvalidaException {
 		super(descricao, valor, disponibilidade, tamanho, quantidade);
 	}
@@ -33,16 +35,16 @@ public class Calca extends Roupa {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
-		sb.append(" - ");
+		sb.append(delimitador);
 		sb.append(marca);
-		sb.append(" - ");
-		sb.append(especial);
-		sb.append(" - ");
+		sb.append(delimitador);
+		sb.append(especial ? "Especial":"Nao Especial");
+		sb.append(delimitador);
 		sb.append(secao);
-		sb.append(" - ");
+		sb.append(delimitador);
 		sb.append(estilo);
-		sb.append(" - ");
-		sb.append(comCinto);
+		sb.append(delimitador);
+		sb.append(comCinto ? "Com cinto":"Sem cinto");
 		
 		return sb.toString();
 	}

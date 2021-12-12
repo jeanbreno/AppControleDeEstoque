@@ -10,6 +10,8 @@ public class Loja {
 	private String contato;
 	private String cnpj;
 	
+	String delimitador = ";";
+	
 	public Loja(String nome, String contato, String cnpj) throws NomeInvalidoException, ContatoInvalidoException, CnpjInvalidoException {
 		
 		if(nome == null) {
@@ -33,9 +35,9 @@ public class Loja {
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append(nome);
-		sb.append(" - ");
+		sb.append(delimitador);
 		sb.append(contato);
-		sb.append(" - ");
+		sb.append(delimitador);
 		sb.append(cnpj);
 		
 		return sb.toString();

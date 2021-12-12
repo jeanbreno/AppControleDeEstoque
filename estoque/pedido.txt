@@ -1,0 +1,2 @@
+Pedido;Pedido 98928;Rei das Roupas;3341-9822;90.985.964/0001-22
+Camisa;Blusa esporte;90;Imediata;G;2;NIKE;false;Adulto Esporte

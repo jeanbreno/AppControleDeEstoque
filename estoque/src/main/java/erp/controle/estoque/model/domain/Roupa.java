@@ -12,6 +12,8 @@ public abstract class Roupa {
 	private String tamanho;
 	private int quantidade;
 	
+	String delimitador = ";";
+	
 	public Roupa(String descricao, float valor, String disponibilidade, String tamanho, int quantidade) throws ValorInvalidoException, TamanhoInvalidoException, QuantidadeInvalidaException {
 		
 		if(valor == 0) {
@@ -45,17 +47,17 @@ public abstract class Roupa {
 		
 		StringBuilder sb = new StringBuilder();
 		sb.append(descricao);
-		sb.append(" - ");
+		sb.append(delimitador);
 		sb.append(valor);
-		sb.append(" - ");
+		sb.append(delimitador);
 		sb.append(tamanho);
-		sb.append(" - ");
+		sb.append(delimitador);
 		sb.append(quantidade);
-		sb.append(" - ");
+		sb.append(delimitador);
 		sb.append(disponibilidade);
-		sb.append(" - ");
+		sb.append(delimitador);
 		sb.append(this.calcularValorTotalDoItem());
-		sb.append(" - ");
+		sb.append(delimitador);
 		sb.append(this.calcularQuantidadeDoItem());
 		
 		return sb.toString();

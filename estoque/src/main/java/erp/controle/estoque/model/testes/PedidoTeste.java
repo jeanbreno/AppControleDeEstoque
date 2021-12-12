@@ -29,7 +29,7 @@ public class PedidoTeste {
 			esporte.setMarca("NIKE");
 			esporte.setEspecial(false);
 			esporte.setSecao("Adulto Esporte");
-			//listaRoupas.add(esporte);
+			listaRoupas.add(esporte);
 		} catch (ValorInvalidoException | TamanhoInvalidoException | QuantidadeInvalidaException e) {
 			System.out.println(e.getMessage());
 		}
@@ -41,7 +41,7 @@ public class PedidoTeste {
 			skinny.setComCinto(false);
 			skinny.setSecao("Jeans Skinny");
 			skinny.setEstilo("Skinny");
-			//listaRoupas.add(skinny);
+			listaRoupas.add(skinny);
 		} catch (ValorInvalidoException | TamanhoInvalidoException | QuantidadeInvalidaException e) {
 			System.out.println(e.getMessage());
 		}
@@ -53,7 +53,7 @@ public class PedidoTeste {
 			golaAlta.setTemCapuz(false);
 			golaAlta.setSecao("Casaco");
 			golaAlta.setEstilo("Linho Gola Alta");
-			//listaRoupas.add(golaAlta);
+			listaRoupas.add(golaAlta);
 		} catch (ValorInvalidoException | TamanhoInvalidoException | QuantidadeInvalidaException e) {
 			System.out.println(e.getMessage());
 		}
@@ -63,7 +63,7 @@ public class PedidoTeste {
 			esporte.setMarca("NIKE");
 			esporte.setEspecial(false);
 			esporte.setSecao("Adulto Esporte");
-			//listaRoupas.add(esporte);
+			listaRoupas.add(esporte);
 		} catch (ValorInvalidoException | TamanhoInvalidoException | QuantidadeInvalidaException e) {
 			System.out.println(e.getMessage());
 		}
@@ -93,7 +93,7 @@ public class PedidoTeste {
 			esporte.setMarca("ADIDAS");
 			esporte.setEspecial(true);
 			esporte.setSecao("Adulto Esporte");
-			//listaRoupas.add(esporte);
+			listaRoupas.add(esporte);
 		} catch (ValorInvalidoException | TamanhoInvalidoException | QuantidadeInvalidaException e) {
 			System.out.println(e.getMessage());
 		}

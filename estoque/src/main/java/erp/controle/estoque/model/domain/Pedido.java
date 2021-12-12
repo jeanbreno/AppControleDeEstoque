@@ -14,6 +14,8 @@ public class Pedido {
 	private Loja loja;
 	private List<Roupa> roupas;
 	
+	String delimitador = ";";
+	
 	public Pedido(Loja loja) throws LojaNulaException  {
 		
 		if(loja == null) {
@@ -23,6 +25,32 @@ public class Pedido {
 		this.numeroPedido = "Pedido #####";
 		this.data = LocalDateTime.now();
 		this.loja = loja;
+	}
+	
+	public float calcularValorTotalPedido() {
+		
+		float valorTotal = 0;
+		
+		for(Roupa rp : roupas) {
+			valorTotal = valorTotal + rp.calcularValorTotalDoItem();
+		}
+		
+		return valorTotal;
+	}
+	
+	public String obterLinhaGravacaoArquivo() {
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append(numeroPedido);
+		sb.append(delimitador);
+		sb.append(loja.getNome());
+		sb.append(delimitador);
+		sb.append(roupas.size());
+		sb.append(delimitador);
+		sb.append(calcularValorTotalPedido());
+		sb.append("\r\n");
+		
+		return sb.toString();
 	}
 	
 	public void relatorio() throws NaoExisteRoupasException {
@@ -56,7 +84,7 @@ public class Pedido {
 		
 		DateTimeFormatter formataData = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 		
-		return String.format("%s - %s - %s - %d",
+		return String.format("%s ; %s ; %s ; %d",
 				this.data.format(formataData),
 				this.numeroPedido,
 				this.loja,
@@ -87,4 +115,5 @@ public class Pedido {
 	public void setRoupas(List<Roupa> roupas) {
 		this.roupas = roupas;
 	}
+	
 }
