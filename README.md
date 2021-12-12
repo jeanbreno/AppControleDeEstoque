@@ -1,4 +1,4 @@
-## Projeto de sistema para controle de estoque
+# Projeto de sistema para controle de estoque
 
 Instituto Infnet
 
@@ -8,7 +8,7 @@ _______________________________________________
 
 OBS: SpringBoot para versão JAVA 8
 
-# Para visualizar o projeto
+### Para visualizar o projeto
 
 - Abra seu navegador e digite: http://localhost:8080/
 - Execute a Classe AppEstoqueApplication
