@@ -2,6 +2,7 @@ package erp.controle.estoque.model.testes;
 
 import erp.controle.estoque.model.domain.Calca;
 import erp.controle.estoque.model.domain.Camisa;
+import erp.controle.estoque.model.domain.Casaco;
 
 //import erp.controle.estoque.model.domain.Roupa;
 
@@ -19,9 +20,18 @@ public class RoupaTeste {
 		skinny.setMarca("Riachuelo");
 		skinny.setEspecial(false);
 		skinny.setComCinto(false);
-		skinny.setSecao("Jeans Skinny Normal");
+		skinny.setSecao("Jeans Skinny");
 		skinny.setEstilo("Skinny");
 		System.out.println(skinny);
+		
+		Casaco golaAlta = new Casaco("Casaco Linho Gola Alta", 76, "Imediato", "P", 3);
+		golaAlta.setMarca("Adidas");
+		golaAlta.setEspecial(false);
+		golaAlta.setTemCapuz(false);
+		golaAlta.setSecao("Casaco");
+		golaAlta.setEstilo("Linho Gola Alta");
+		System.out.println(golaAlta);
+	
 	}
 
 }
