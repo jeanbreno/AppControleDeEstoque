@@ -11,7 +11,7 @@ public class Pedido {
 	
 	
 	public Pedido() {
-		this.numeroPedido = "Sem descrição";
+		this.numeroPedido = "Pedido #####";
 		this.data = LocalDateTime.now();
 	}
 

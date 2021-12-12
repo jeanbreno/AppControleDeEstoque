@@ -1,6 +1,6 @@
 package erp.controle.estoque.model.domain;
 
-public class Roupa {
+public abstract class Roupa {
 	
 	private String descricao;
 	private float valor;
@@ -14,6 +14,8 @@ public class Roupa {
 		this.tamanho = tamanho;
 	}
 	
+	public abstract float calcularValorPedido();
+	
 	@Override
 	public String toString() {
 		
@@ -25,7 +27,27 @@ public class Roupa {
 		sb.append(tamanho);
 		sb.append(" - ");
 		sb.append(valor);
+		sb.append(" - ");
+		sb.append(this.calcularValorPedido());
 		
 		return sb.toString();
 	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public float getValor() {
+		return valor;
+	}
+
+	public Boolean getDisponibilidade() {
+		return disponibilidade;
+	}
+
+	public String getTamanho() {
+		return tamanho;
+	}
+	
+	
 }
