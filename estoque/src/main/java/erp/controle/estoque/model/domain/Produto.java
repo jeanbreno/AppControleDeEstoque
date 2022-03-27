@@ -24,7 +24,7 @@ public class Produto {
 	private String regiao;
 	//@ManyToOne
 	//@JoinColumn(name = "idusuario")
-	//private Usuario usuario;
+	private Usuario usuario;
 	
 	public Produto() {
 		//
@@ -106,10 +106,10 @@ public class Produto {
 	public void setRegiao(String regiao) {
 		this.regiao = regiao;
 	}
-	//public Usuario getUsuario() {
-	//	return usuario;
-	//}
-	//public void setUsuario(Usuario usuario) {
-	//	this.usuario = usuario;
-	//}	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}	
 }
