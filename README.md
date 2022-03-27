@@ -1,14 +1,13 @@
 # Projeto de sistema para controle de estoque
 
-## Instituto Infnet
-
-## Professor Elberth Morais
+#### Instituto Infnet
+#### Professor Elberth Morais
 
 ---
 
-## OBS: SpringBoot para versão JAVA 8
+#### OBS: SpringBoot para versão JAVA 8
 
-### Para visualizar o projeto
+#### Para visualizar o projeto
 
 - Abra seu navegador e digite: http://localhost:8080/
 - Execute a Classe AppEstoqueApplication
@@ -16,7 +15,7 @@
 
 ---
 
-### Template de página web utilizado no projeto
+#### Template de página web utilizado no projeto
 
 - [Template Freelancer - Start Bootstrap](https://startbootstrap.com/theme/freelancer)
 

@@ -8,13 +8,13 @@
   	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
 <body>
-	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+	<!-- <c:import url="/WEB-INF/jsp/menu.jsp"/> -->
 
 	<div class="container fixed-top" >	
 
 		<h4>Cadastramento de alunos:</h4>
 
-		<form action="/aluno" method="get">
+		<form action="/produto" method="get">
 			<button type="submit">Novo aluno</button>
 		</form>
 

@@ -17,8 +17,8 @@
 -->
 	<div class="container">
 	
-		<form action="/aluno/incluir" method="post">
-			<h2>Cadastramento de Alunos</h2>
+		<form action="/produto/incluir" method="post">
+			<h2>Cadastramento de Produtos</h2>
 		
 			<div class="form-group">
 				<label>Nome:</label>

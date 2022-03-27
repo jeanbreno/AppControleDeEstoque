@@ -10,7 +10,7 @@ package erp.controle.estoque.model.domain;
 
 //@Entity
 //@Table(name = "TAluno")
-public class Aluno {
+public class Produto {
 
 	//@Id
 	//@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,11 +26,11 @@ public class Aluno {
 	//@JoinColumn(name = "idusuario")
 	//private Usuario usuario;
 	
-	public Aluno() {
+	public Produto() {
 		//
 	}
 
-	public Aluno(String nome, String email) {
+	public Produto(String nome, String email) {
 		this();
 		this.nome = nome;
 		this.email = email;
