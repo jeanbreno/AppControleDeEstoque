@@ -71,7 +71,7 @@
 				        <th>Idade</th>
 				        <th>Curso</th>
 				        <th>Região</th>
-				        <!--<th>Usuário</th> -->
+				        <th>Usuário</th>
 				        <th></th>
 				      </tr>
 				    </thead>
@@ -88,6 +88,7 @@
 				      </tr>
 					</c:forEach>
 				    </tbody>
+					<!-- 				    
 				    <tfoot>
 				      <tr>
 				        <th>Nome</th>
@@ -98,6 +99,7 @@
 				        <th></th>
 				      </tr>
 				    </tfoot>
+				     -->
 			  	</table>
 			</c:if>
 			

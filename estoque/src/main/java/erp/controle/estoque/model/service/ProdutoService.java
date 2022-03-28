@@ -2,7 +2,9 @@ package erp.controle.estoque.model.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,14 +37,21 @@ import erp.controle.estoque.model.domain.Usuario;
 @Service
 public class ProdutoService{
 	
+	private static Map<Integer, Produto> mapaProdutos = new HashMap<Integer, Produto>();
+	
+	private static Integer id = 0;
+	
 	private static List<Produto> produtos = new ArrayList<Produto>();
 	
-	public List<Produto> obterLista(){
-		return produtos;
+	public Collection<Produto> obterLista(){
+		
+		return mapaProdutos.values();
 	}
 	
 	public void incluir (Produto produto){
-		produtos.add(produto);
+		
+		mapaProdutos.put(++id, produto);
+		//produtos.add(produto);
 	}
 }
  
