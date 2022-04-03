@@ -4,8 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.JoinColumn;
-//import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,8 +22,8 @@ public class Produto {
 	private String[] disciplinas;
 	private String curso;
 	private String regiao;
-	//@ManyToOne
-	//@JoinColumn(name = "idusuario")
+	@ManyToOne
+	@JoinColumn(name = "idusuario")
 	private Usuario usuario;
 	
 	public Produto() {

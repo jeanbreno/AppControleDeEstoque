@@ -11,6 +11,6 @@ import erp.controle.estoque.model.domain.Produto;
 @Repository
 public interface ProdutoRepository extends CrudRepository<Produto, Integer> {
 
-	//@Query("from Produto p where p.usuario.id = :idUsuario")
-	//public List<Produto> obterLista(Integer idUsuario);
+	@Query("from Produto p where p.usuario.id = :idUsuario")
+	public List<Produto> obterLista(Integer idUsuario);
 }

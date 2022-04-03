@@ -11,28 +11,33 @@ import org.springframework.stereotype.Service;
 
 import erp.controle.estoque.model.domain.Produto;
 import erp.controle.estoque.model.domain.Usuario;
-/*
- * import erp.controle.estoque.model.repository.ProdutoRepository;
- * 
- * @Service public class ProdutoService {
- * 
- * @Autowired private ProdutoRepository protudoRepository; //public Produto
- * produto;
- * 
- * public Collection<Produto> obterLista(Usuario usuario){ return
- * (Collection<Produto>) protudoRepository.obterLista(usuario.getId()); }
- * 
- * public Collection<Produto> obterLista(){ return (Collection<Produto>)
- * protudoRepository.findAll(); }
- * 
- * public Produto incluir(Produto produto){ return
- * produtoRepository.save(produto); }
- * 
- * public void excluir(Integer id) { protudoRepository.deleteById(id); }
- * 
- * public Produto obterPorId(Integer id) { return
- * protudoRepository.findById(id).orElse(null); } }
- */
+
+import erp.controle.estoque.model.repository.ProdutoRepository;
+  
+//@Service 
+//public class ProdutoService {
+//  
+//	@Autowired 
+//	private ProdutoRepository protudoRepository;
+//	public Produto produto;
+// 
+//	public Collection<Produto> obterLista(Usuario usuario){ 
+//		  return (Collection<Produto>) protudoRepository.obterLista(usuario.getId()); 
+//		  }
+// 
+//	public Collection<Produto> obterLista(){ 
+//		return (Collection<Produto>) protudoRepository.findAll(); 
+//		}
+// 
+//	public Produto incluir(Produto produto){ return protudoRepository.save(produto); }
+// 
+//	public void excluir(Integer id) { protudoRepository.deleteById(id); }
+// 
+//	public Produto obterPorId(Integer id) { 
+//		return protudoRepository.findById(id).orElse(null); 
+//		} 
+//}
+ 
 
 @Service
 public class ProdutoService{
@@ -49,9 +54,8 @@ public class ProdutoService{
 	}
 	
 	public void incluir (Produto produto){
-		
 		mapaProdutos.put(++id, produto);
-		//produtos.add(produto);
+		produtos.add(produto);
 	}
 }
  

@@ -2,7 +2,7 @@ package erp.controle.estoque.model.domain;
 
 import java.util.List;
 
-/*
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,20 +11,20 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-*/
-//@Entity
-//@Table(name = "TUsuario")
+
+@Entity
+@Table(name = "TUsuario")
 public class Usuario {
 
-	//@Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	private String email;
 	private String senha;
 	private boolean admin;
-	//@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
-	//@JoinColumn(name = "idusuario")
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idusuario")
 	private List<Produto> produtos;
 	
 	public Usuario() {
