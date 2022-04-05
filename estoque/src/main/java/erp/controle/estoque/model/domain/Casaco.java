@@ -1,9 +1,14 @@
 package erp.controle.estoque.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import erp.controle.estoque.exceptions.QuantidadeInvalidaException;
 import erp.controle.estoque.exceptions.TamanhoInvalidoException;
 import erp.controle.estoque.exceptions.ValorInvalidoException;
 
+@Entity
+@Table(name = "TCasaco")
 public class Casaco extends Roupa {
 
 	private String marca;
@@ -14,8 +19,12 @@ public class Casaco extends Roupa {
 	
 	String delimitador = ";";
 	
-	public Casaco(String descricao, float valor, String disponibilidade, String tamanho, int quantidade) throws ValorInvalidoException, TamanhoInvalidoException, QuantidadeInvalidaException {
-		super(descricao, valor, disponibilidade, tamanho, quantidade);
+	public Casaco() {
+		//
+	}
+	
+	public Casaco(String nome, String descricao, float valor, String disponibilidade, String tamanho, int quantidade) throws ValorInvalidoException, TamanhoInvalidoException, QuantidadeInvalidaException {
+		super(nome, descricao, valor, disponibilidade, tamanho, quantidade);
 	}
 
 	@Override
@@ -26,10 +35,10 @@ public class Casaco extends Roupa {
 		return valorTotalDoItem;
 	}
 
-	@Override
-	public float calcularQuantidadeDoItem() {
-		return 0;
-	}
+	//@Override
+	//public float calcularQuantidadeDoItem() {
+	//	return 0;
+	//}
 
 	@Override
 	public String toString() {

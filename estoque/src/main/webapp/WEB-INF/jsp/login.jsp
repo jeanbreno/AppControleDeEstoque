@@ -33,7 +33,7 @@
 		    <!-- Login Form -->
 		    <form action="/login" method="post">
 		      <input type="email" id="login" class="fadeIn second" name="email" placeholder="login" value="jota@gmail.com">
-		      <input type="password" id="password" class="fadeIn third" name="senha" placeholder="password" value="jota@gmail.com">
+		      <input type="password" id="password" class="fadeIn third" name="senha" placeholder="password" value="123">
 		      <input type="submit" class="fadeIn fourth" value="Entrar">
 		    </form>
 		

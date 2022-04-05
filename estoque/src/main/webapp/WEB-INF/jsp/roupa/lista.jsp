@@ -4,7 +4,7 @@
 <html>
     <head>
 	    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>App.2022 - Java</title>
+		<title>Estoque</title>
 	  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	    
 	    <style>
@@ -42,10 +42,10 @@
 	
 		<div class="container fixed-top" >	
 	
-			<h4>Cadastramento de produtos:</h4>
+			<h4>Cadastramento de roupas:</h4>
 	
-			<form action="/produto" method="get">
-				<button type="submit">Novo produto</button>
+			<form action="/roupa" method="get">
+				<button type="submit">Nova roupa</button>
 			</form>
 	<%-- 
 			<c:if test="${not empty mensagem}">
@@ -61,30 +61,30 @@
 				</div>
 			</c:if>
 	
-			<c:if test="${not empty produtoLista}">
-			  	<p>Quantidade de produtos cadastrados: ${produtoLista.size()}</p>            
+			<c:if test="${not empty roupaLista}">
+			  	<p>Quantidade de roupas cadastrados: ${roupaLista.size()}</p>            
 			  	<table class="table table-striped">
 				    <thead>
 				      <tr>
-				        <th>Nome</th>
-				        <th>E-mail</th>
-				        <th>Idade</th>
-				        <th>Curso</th>
-				        <th>Região</th>
+				        <th>Descricao</th>
+				        <th>Valor</th>
+				        <th>Disponibilidade</th>
+				        <th>Tamanho</th>
+				        <th>Quantidade</th>
 				        <th>Usuário</th>
 				        <th></th>
 				      </tr>
 				    </thead>
 				    <tbody>
-				    <c:forEach var="a" items="${produtoLista}">
+				    <c:forEach var="a" items="${roupaLista}">
 				      <tr>
-				        <td>${a.nome}</td>
-				        <td>${a.email}</td>
-				        <td>${a.idade}</td>
-				        <td>${a.curso}</td>
-				        <td>${a.regiao}</td>
+				        <td>${a.descricao}</td>
+				        <td>${a.valor}</td>
+				        <td>${a.disponibilidade}</td>
+				        <td>${a.tamanho}</td>
+				        <td>${a.quantidade}</td>
 				        <td>${a.usuario.nome}</td>
-				        <td><a href="/produto/${a.id}/excluir">Excluir</a></td>
+				        <td><a href="/roupa/${a.id}/excluir">Excluir</a></td>
 				      </tr>
 					</c:forEach>
 				    </tbody>
@@ -103,8 +103,8 @@
 			  	</table>
 			</c:if>
 			
-			<c:if test="${empty produtoLista}">
-		  		<p>Não existem produtos cadastrados!</p>            
+			<c:if test="${empty roupaLista}">
+		  		<p>Não existem roupas cadastrados!</p>            
 		  	</c:if>
 		</div>
 		

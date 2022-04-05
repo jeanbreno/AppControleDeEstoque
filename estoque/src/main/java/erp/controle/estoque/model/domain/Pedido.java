@@ -4,15 +4,48 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
 import erp.controle.estoque.exceptions.LojaNulaException;
 import erp.controle.estoque.exceptions.NaoExisteRoupasException;
 
+@Entity
+@Table(name = "TPedido", 
+uniqueConstraints = { 
+		@UniqueConstraint(columnNames = { "descricao", "idLoja" }) 
+	}
+)
 public class Pedido {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String descricao;
 	private String numeroPedido;
 	private LocalDateTime data;
+	@OneToOne(cascade = CascadeType.DETACH)
+	@JoinColumn(name = "idLoja")
 	private Loja loja;
+	@ManyToMany(cascade = CascadeType.DETACH)
 	private List<Roupa> roupas;
+	@ManyToOne
+	@JoinColumn(name = "idusuario")
+	private Usuario usuario;
+	
+	public Pedido() {
+		this.descricao = "Pedido padrão da empresa";
+		this.data = LocalDateTime.now();
+	}
 	
 	String delimitador = ";";
 	
@@ -84,14 +117,23 @@ public class Pedido {
 		
 		DateTimeFormatter formataData = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 		
-		return String.format("%s ; %s ; %s ; %d",
-				this.data.format(formataData),
+		return String.format("%s ; %s ; %s ; %s ; %d",
 				this.numeroPedido,
+				this.descricao,
+				this.data.format(formataData),
 				this.loja,
 				qtdRoupas
 				);
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+	
 	public String getNumeroPedido() {
 		return numeroPedido;
 	}
@@ -108,12 +150,37 @@ public class Pedido {
 		return loja;
 	}
 
+	public void setLoja(Loja loja) {
+		this.loja = loja;
+	}
+	
 	public List<Roupa> getRoupas() {
 		return roupas;
 	}
+	
 
 	public void setRoupas(List<Roupa> roupas) {
 		this.roupas = roupas;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 }

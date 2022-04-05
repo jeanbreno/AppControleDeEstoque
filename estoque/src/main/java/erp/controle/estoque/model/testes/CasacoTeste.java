@@ -11,7 +11,7 @@ public class CasacoTeste {
 		
 		Casaco golaAlta;
 		try {
-			golaAlta = new Casaco("Casaco Linho", 76, "Imediato", "P", 3);
+			golaAlta = new Casaco("1","Casaco Linho", 76, "Imediato", "P", 3);
 			golaAlta.setEspecial(false);
 			golaAlta.setTemCapuz(false);
 			System.out.println("Valor total do item Gola Alta: " + golaAlta.calcularValorTotalDoItem());
@@ -21,7 +21,7 @@ public class CasacoTeste {
 
 		Casaco canguru;
 		try {
-			canguru = new Casaco("Casaco Urso", 0, "10 dias", "M", 3);
+			canguru = new Casaco("1","Casaco Urso", 0, "10 dias", "M", 3);
 			canguru.setEspecial(false);
 			canguru.setTemCapuz(true);
 			System.out.println("Valor total do item Canguru: " + canguru.calcularValorTotalDoItem());
@@ -31,7 +31,7 @@ public class CasacoTeste {
 		
 		Casaco esporte;
 		try {
-			esporte = new Casaco("Casaco Corta Vento", 37, "2 dias", null, 5);
+			esporte = new Casaco("1","Casaco Corta Vento", 37, "2 dias", null, 5);
 			esporte.setEspecial(true);
 			esporte.setTemCapuz(false);
 			System.out.println("Valor total do item Esporte: " + esporte.calcularValorTotalDoItem());
@@ -41,7 +41,7 @@ public class CasacoTeste {
 
 		Casaco social;
 		try {
-			social = new Casaco("Casaco Social Rajado", 89, "8 dias", "XGG", -5);
+			social = new Casaco("1","Casaco Social Rajado", 89, "8 dias", "XGG", -5);
 			social.setEspecial(true);
 			social.setTemCapuz(true);
 			System.out.println("Valor total do item Social: " + social.calcularValorTotalDoItem());

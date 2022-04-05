@@ -1,20 +1,54 @@
 package erp.controle.estoque.model.domain;
 
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
 import erp.controle.estoque.exceptions.QuantidadeInvalidaException;
 import erp.controle.estoque.exceptions.TamanhoInvalidoException;
 import erp.controle.estoque.exceptions.ValorInvalidoException;
 
+@Entity
+@Table(name = "TRoupa", 
+uniqueConstraints = { 
+		@UniqueConstraint(columnNames = { "nome", "descricao", "valor" }) 
+	}
+)
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Roupa {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String nome;
 	private String descricao;
 	private float valor;
 	private String disponibilidade;
 	private String tamanho;
 	private int quantidade;
+	@ManyToOne
+	@JoinColumn(name = "idusuario")
+	private Usuario usuario;
+	@ManyToMany(mappedBy = "roupas")
+	private List<Pedido> pedidos;
 	
 	String delimitador = ";";
 	
-	public Roupa(String descricao, float valor, String disponibilidade, String tamanho, int quantidade) throws ValorInvalidoException, TamanhoInvalidoException, QuantidadeInvalidaException {
+	public Roupa() {
+		
+	}
+	
+	public Roupa(String nome, String descricao, float valor, String disponibilidade, String tamanho, int quantidade) throws ValorInvalidoException, TamanhoInvalidoException, QuantidadeInvalidaException {
 		
 		if(valor == 0) {
 			throw new ValorInvalidoException("Não é possível cadastrar item com o campo Valor igual a zero.");
@@ -32,6 +66,7 @@ public abstract class Roupa {
 			throw new QuantidadeInvalidaException("Não é possível cadastrar item com o campo Quantidade menor que zero");
 		}
 		
+		this.nome = nome;
 		this.descricao = descricao;
 		this.valor = valor;
 		this.disponibilidade = disponibilidade;
@@ -40,12 +75,13 @@ public abstract class Roupa {
 	}
 	
 	public abstract float calcularValorTotalDoItem();
-	public abstract float calcularQuantidadeDoItem();
+	//public abstract float calcularQuantidadeDoItem();
 	
 	@Override
 	public String toString() {
 		
 		StringBuilder sb = new StringBuilder();
+		sb.append(nome);
 		sb.append(descricao);
 		sb.append(delimitador);
 		sb.append(valor);
@@ -57,10 +93,14 @@ public abstract class Roupa {
 		sb.append(disponibilidade);
 		sb.append(delimitador);
 		sb.append(this.calcularValorTotalDoItem());
-		sb.append(delimitador);
-		sb.append(this.calcularQuantidadeDoItem());
+		//sb.append(delimitador);
+		//sb.append(this.calcularQuantidadeDoItem());
 		
 		return sb.toString();
+	}
+	
+	public Integer getId() {
+		return id;
 	}
 
 	public String getDescricao() {
@@ -81,6 +121,54 @@ public abstract class Roupa {
 
 	public int getQuantidade() {
 		return quantidade;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
+
+	public void setDisponibilidade(String disponibilidade) {
+		this.disponibilidade = disponibilidade;
+	}
+	
+	public void setTamanho(String tamanho) {
+		this.tamanho = tamanho;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
 }

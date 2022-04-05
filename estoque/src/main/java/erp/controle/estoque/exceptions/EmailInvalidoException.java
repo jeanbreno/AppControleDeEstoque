@@ -1,10 +1,10 @@
 package erp.controle.estoque.exceptions;
 
-public class ContatoInvalidoException extends Exception {
+public class EmailInvalidoException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 
-	public ContatoInvalidoException(String mensagem) {
+	public EmailInvalidoException(String mensagem) {
 		super(mensagem);
 	}
 }

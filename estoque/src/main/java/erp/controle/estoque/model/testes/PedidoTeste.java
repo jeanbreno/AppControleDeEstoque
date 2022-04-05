@@ -5,7 +5,7 @@ import java.util.List;
 import erp.controle.estoque.model.domain.Pedido;
 import erp.controle.estoque.model.domain.Roupa;
 import erp.controle.estoque.exceptions.CnpjInvalidoException;
-import erp.controle.estoque.exceptions.ContatoInvalidoException;
+import erp.controle.estoque.exceptions.EmailInvalidoException;
 import erp.controle.estoque.exceptions.LojaNulaException;
 import erp.controle.estoque.exceptions.NaoExisteRoupasException;
 import erp.controle.estoque.exceptions.NomeInvalidoException;
@@ -25,7 +25,7 @@ public class PedidoTeste {
 		List<Roupa> listaRoupas = new ArrayList<Roupa>();
 		
 		try {
-			Camisa esporte = new Camisa("Blusa esporte", 20, "Imediata", "G", 2);
+			Camisa esporte = new Camisa("1","Blusa esporte", 20, "Imediata", "G", 2);
 			esporte.setMarca("NIKE");
 			esporte.setEspecial(false);
 			esporte.setSecao("Adulto Esporte");
@@ -35,7 +35,7 @@ public class PedidoTeste {
 		}
 	
 		try {
-			Calca skinny = new Calca("Calca Skinny", 31, "2 dias", "44", 3);
+			Calca skinny = new Calca("1","Calca Skinny", 31, "2 dias", "44", 3);
 			skinny.setMarca("Riachuelo");
 			skinny.setEspecial(false);
 			skinny.setComCinto(false);
@@ -47,7 +47,7 @@ public class PedidoTeste {
 		}
 	
 		try {
-			Casaco golaAlta = new Casaco("Casaco Linho Gola Alta", 76, "Imediato", "P", 1);
+			Casaco golaAlta = new Casaco("1","Casaco Linho Gola Alta", 76, "Imediato", "P", 1);
 			golaAlta.setMarca("Adidas");
 			golaAlta.setEspecial(false);
 			golaAlta.setTemCapuz(false);
@@ -59,7 +59,7 @@ public class PedidoTeste {
 		}
 		
 		try {
-			Camisa esporte = new Camisa("Blusa esporte", 0, "Imediata", "G", 2);
+			Camisa esporte = new Camisa("1","Blusa esporte", 0, "Imediata", "G", 2);
 			esporte.setMarca("NIKE");
 			esporte.setEspecial(false);
 			esporte.setSecao("Adulto Esporte");
@@ -69,7 +69,7 @@ public class PedidoTeste {
 		}
 		
 		try {
-			Camisa esporte = new Camisa("Blusa esporte", 20, "Imediata", "G", -5);
+			Camisa esporte = new Camisa("1","Blusa esporte", 20, "Imediata", "G", -5);
 			esporte.setMarca("NIKE");
 			esporte.setEspecial(false);
 			esporte.setSecao("Adulto Esporte");
@@ -79,7 +79,7 @@ public class PedidoTeste {
 		}
 		
 		try {
-			Camisa esporte = new Camisa("Blusa esporte", 20, "Imediata", null, 2);
+			Camisa esporte = new Camisa("1","Blusa esporte", 20, "Imediata", null, 2);
 			esporte.setMarca("NIKE");
 			esporte.setEspecial(false);
 			esporte.setSecao("Adulto Esporte");
@@ -89,7 +89,7 @@ public class PedidoTeste {
 		}
 		
 		try {
-			Camisa esporte = new Camisa("Blusa esporte", 96, "Imediata", "G", 2);
+			Camisa esporte = new Camisa("1","Blusa esporte", 96, "Imediata", "G", 2);
 			esporte.setMarca("ADIDAS");
 			esporte.setEspecial(true);
 			esporte.setSecao("Adulto Esporte");
@@ -108,14 +108,14 @@ public class PedidoTeste {
 			} catch (LojaNulaException | NaoExisteRoupasException e) {
 				System.out.println(e.getMessage());
 			}
-		} catch (NomeInvalidoException | ContatoInvalidoException | CnpjInvalidoException e) {
+		} catch (NomeInvalidoException | EmailInvalidoException | CnpjInvalidoException e) {
 			System.out.println(e.getMessage());
 		}
 		
 		Loja loja = null;
 		try {
 			loja = new Loja(null, "3341-9822", "90.985.964/0001-22");
-		} catch (NomeInvalidoException | ContatoInvalidoException | CnpjInvalidoException e) {
+		} catch (NomeInvalidoException | EmailInvalidoException | CnpjInvalidoException e) {
 			System.out.println(e.getMessage());
 		}
 		
@@ -130,7 +130,7 @@ public class PedidoTeste {
 		
 		try {
 			loja = new Loja("Rei das Roupas", "3341-9822", "90.985.964/0001-22");
-		} catch (NomeInvalidoException | ContatoInvalidoException | CnpjInvalidoException e) {
+		} catch (NomeInvalidoException | EmailInvalidoException | CnpjInvalidoException e) {
 			System.out.println(e.getMessage());
 		}
 		
@@ -145,7 +145,7 @@ public class PedidoTeste {
 		
 		try {
 			loja = new Loja("Rei das Roupas", "3341-9822", "90.985.964/0001-22");
-		} catch (NomeInvalidoException | ContatoInvalidoException | CnpjInvalidoException e) {
+		} catch (NomeInvalidoException | EmailInvalidoException | CnpjInvalidoException e) {
 			System.out.println(e.getMessage());
 		}
 		

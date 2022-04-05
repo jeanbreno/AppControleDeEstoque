@@ -14,7 +14,7 @@ public class RoupaTeste {
 	public static void main(String[] args) {
 		
 		try {
-			Camisa esporte = new Camisa("Blusa esporte", 16, "Imediata", "G", 5);
+			Camisa esporte = new Camisa("1","Blusa esporte", 16, "Imediata", "G", 5);
 			esporte.setMarca("NIKE");
 			esporte.setEspecial(false);
 			esporte.setSecao("Adulto Esporte");
@@ -24,7 +24,7 @@ public class RoupaTeste {
 		}
 		
 		try {
-			Calca skinny = new Calca("Calca Skinny", 31, "2 dias", null, 9);
+			Calca skinny = new Calca("1","Calca Skinny", 31, "2 dias", null, 9);
 			skinny.setMarca("Riachuelo");
 			skinny.setEspecial(false);
 			skinny.setComCinto(false);
@@ -36,7 +36,7 @@ public class RoupaTeste {
 		}
 		
 		try {
-			Casaco golaAlta = new Casaco("Casaco Linho Gola Alta", 0, "Imediato", "P", 3);
+			Casaco golaAlta = new Casaco("1","Casaco Linho Gola Alta", 0, "Imediato", "P", 3);
 			golaAlta.setMarca("Adidas");
 			golaAlta.setEspecial(false);
 			golaAlta.setTemCapuz(false);
@@ -48,7 +48,7 @@ public class RoupaTeste {
 		}
 		
 		try {
-			Casaco golaAlta = new Casaco("Casaco Linho Gola Alta", 8, "Imediato", "P", -9);
+			Casaco golaAlta = new Casaco("1","Casaco Linho Gola Alta", 8, "Imediato", "P", -9);
 			golaAlta.setMarca("Adidas");
 			golaAlta.setEspecial(false);
 			golaAlta.setTemCapuz(false);

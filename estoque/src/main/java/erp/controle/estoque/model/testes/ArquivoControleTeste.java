@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import erp.controle.estoque.exceptions.CnpjInvalidoException;
-import erp.controle.estoque.exceptions.ContatoInvalidoException;
+import erp.controle.estoque.exceptions.EmailInvalidoException;
 //import erp.controle.estoque.exceptions.FileNotFoundException;
 import erp.controle.estoque.exceptions.LojaNulaException;
 import erp.controle.estoque.exceptions.NaoExisteRoupasException;
@@ -62,7 +62,7 @@ public class ArquivoControleTeste {
 						Loja loja = null;
 						try {
 							loja = new Loja(campos[2], campos[3], campos[4]);
-						} catch (NomeInvalidoException | ContatoInvalidoException | CnpjInvalidoException e) {
+						} catch (NomeInvalidoException | EmailInvalidoException | CnpjInvalidoException e) {
 							System.out.println(e.getMessage());
 						}
 						
@@ -77,7 +77,7 @@ public class ArquivoControleTeste {
 						break;
 					case "Calca":				
 						try {
-							Calca skinny = new Calca(campos[1], Float.valueOf(campos[2]), campos[3], campos[4], Integer.valueOf(campos[5]));
+							Calca skinny = new Calca(campos[1], campos[2], Float.valueOf(campos[3]), campos[4], campos[5], Integer.valueOf(campos[6]));
 							skinny.setMarca(campos[6]);
 							skinny.setEspecial(Boolean.valueOf(campos[7]));
 							skinny.setComCinto(Boolean.valueOf(campos[8]));
@@ -91,7 +91,7 @@ public class ArquivoControleTeste {
 						break;
 					case "Camisa":				
 						try {
-							Camisa esporte = new Camisa(campos[1], Float.valueOf(campos[2]), campos[3], campos[4], Integer.valueOf(campos[5]));
+							Camisa esporte = new Camisa(campos[1], campos[2], Float.valueOf(campos[3]), campos[4], campos[5], Integer.valueOf(campos[6]));
 							esporte.setMarca(campos[6]);
 							esporte.setEspecial(Boolean.valueOf(campos[7]));
 							esporte.setSecao(campos[8]);
@@ -103,7 +103,7 @@ public class ArquivoControleTeste {
 						break;
 					case "Casaco":				
 						try {
-							Casaco rajado = new Casaco(campos[1], Float.valueOf(campos[2]), campos[3], campos[4], Integer.valueOf(campos[5]));
+							Casaco rajado = new Casaco(campos[1], campos[2], Float.valueOf(campos[3]), campos[4], campos[5], Integer.valueOf(campos[6]));
 							rajado.setMarca(campos[6]);
 							rajado.setEspecial(Boolean.valueOf(campos[7]));
 							rajado.setTemCapuz(Boolean.valueOf(campos[8]));

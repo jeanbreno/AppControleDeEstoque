@@ -2,7 +2,6 @@ package erp.controle.estoque.model.domain;
 
 import java.util.List;
 
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,10 +9,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "TUsuario")
+@Table(name = "TUsuario", 
+	uniqueConstraints = { 
+			@UniqueConstraint(columnNames = { "nome" }), 
+			@UniqueConstraint(columnNames = { "email" }) 
+		}
+)
 public class Usuario {
 
 	@Id
@@ -25,10 +31,19 @@ public class Usuario {
 	private boolean admin;
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idusuario")
-	private List<Produto> produtos;
+	private List<Loja> lojas;
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idusuario")
+	private List<Roupa> roupas;
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idusuario")
+	private List<Pedido> pedidos;
+	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "idendereco")	
+	private Endereco endereco;
 	
 	public Usuario() {
-		this.nome = "Elberth Moraes";
+		this.nome = "Jota Jota";
 	}
 
 	public Integer getId() {
@@ -71,11 +86,35 @@ public class Usuario {
 		this.admin = admin;
 	}
 
-	public List<Produto> getProdutos() {
-		return produtos;
+	public List<Roupa> getRoupas() {
+		return roupas;
 	}
 
-	public void setAlunos(List<Produto> produtos) {
-		this.produtos = produtos;
+	public void setRoupas(List<Roupa> roupas) {
+		this.roupas = roupas;
+	}
+	
+	public List<Loja> getLojas() {
+		return lojas;
+	}
+	
+	public void setLojas(List<Loja> lojas) {
+		this.lojas = lojas;
+	}
+	
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
 	}
 }
