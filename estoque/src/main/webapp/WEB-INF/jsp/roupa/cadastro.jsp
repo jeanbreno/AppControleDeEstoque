@@ -8,13 +8,12 @@
   	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
 <body>
-<!--  
 	<header class="masthead">
     <div class="container px-4 px-lg-5 h-100">
-	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+	<c:import url="/WEB-INF/jsp/menu-voltar.jsp"/>
 	</div>
 	</header>
--->
+	
 	<div class="container">
 	
 		<form action="/roupa/incluir" method="post">

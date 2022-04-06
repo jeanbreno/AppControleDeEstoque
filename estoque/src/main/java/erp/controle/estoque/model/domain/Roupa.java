@@ -21,7 +21,7 @@ import erp.controle.estoque.exceptions.ValorInvalidoException;
 @Entity
 @Table(name = "TRoupa", 
 uniqueConstraints = { 
-		@UniqueConstraint(columnNames = { "nome", "descricao", "valor" }) 
+		@UniqueConstraint(columnNames = { "nome", "descricao", "valor", "disponibilidade", "tamanho", "quantidade" }) 
 	}
 )
 @Inheritance(strategy = InheritanceType.JOINED)

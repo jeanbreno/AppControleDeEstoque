@@ -22,7 +22,7 @@ import erp.controle.estoque.exceptions.NaoExisteRoupasException;
 @Entity
 @Table(name = "TPedido", 
 uniqueConstraints = { 
-		@UniqueConstraint(columnNames = { "descricao", "idLoja" }) 
+		@UniqueConstraint(columnNames = { "descricao", "numeroPedido", "idLoja" }) 
 	}
 )
 public class Pedido {

@@ -35,26 +35,7 @@
 			<ul class="navbar-nav ms-auto">
 				<c:if test="${not empty user}">
 					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="/roupas">Roupa</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="/lojas">Loja</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="/camisas">Camisa</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="/calcas">Calca</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="/casacos">Casaco</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="/pedidos">Pedido</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="/usuarios">Usuario</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded"
-						href="https://github.com/jeanbreno/AppControleDeEstoque"
-						target="_blank" rel="noopener noreferrer">GitHub do Projeto</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="/logout">Sair,
-							${user.nome}?</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="/">Voltar</a></li>
 				</c:if>
 				<c:if test="${empty user}">
 					<li class="nav-item mx-0 mx-lg-1"><a

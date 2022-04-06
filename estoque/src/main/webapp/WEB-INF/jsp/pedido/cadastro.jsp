@@ -13,7 +13,7 @@
 
 	<header class="masthead">
     <div class="container px-4 px-lg-5 h-100">
-	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+	<c:import url="/WEB-INF/jsp/menu-voltar.jsp"/>
 	</div>
 	</header>
 
@@ -24,39 +24,44 @@
 		
 			<div class="form-group">
 				<label>Descrição:</label>
-				<input type="text" class="form-control" name="descricao" value="Primeiro pedido"> 
+				<input type="text" class="form-control" name="descricao" value="Remessa de roupas loja TY"> 
+			</div>
+			
+			<div class="form-group">
+				<label>Numero do Pedido:</label>
+				<input type="text" class="form-control" name="numeroPedido" value="59"> 
 			</div>
 
 			<div class="form-group">
-				<c:if test="${not empty solicitanteLista}">
-					<label>Solicitante:</label>
-					<select name="solicitante.id" class="form-control">
-						<c:forEach var="s" items="${solicitanteLista}">
-							<option value="${s.id}">${s.nome}</option>
+				<c:if test="${not empty lojaLista}">
+					<label>Loja:</label>
+					<select name="loja.id" class="form-control">
+						<c:forEach var="l" items="${lojaLista}">
+							<option value="${l.id}">${l.nome}</option>
 						</c:forEach>
 					</select>
 				</c:if>
 				
-				
-				<c:if test="${empty solicitanteLista}">
-					<label>Nenhum solicitante cadastrado!!!</label>
+				<!-- 
+				<c:if test="${empty lojaLista}">
+					<label>Nenhuma loja cadastrado!!!</label>
 					<c:set var="statusBotao" value="disabled"/>
-				</c:if>				
+				</c:if>	 -->			
 			</div>
 
 			<div class="form-group">
-				<c:if test="${not empty produtoLista}">
-					<label>Produtos:</label>
+				<c:if test="${not empty roupaLista}">
+					<label>Roupas:</label>
 					
-					<c:forEach var="p" items="${produtoLista}">
+					<c:forEach var="p" items="${roupaLista}">
 						<div class="checkbox">
-						  <label><input type="checkbox" name="idsProdutos" value="${p.id}" checked> ${p.descricao}</label>
+						  <label><input type="checkbox" name="idsRoupas" value="${p.id}" checked> ${p.descricao}</label>
 						</div>
 					</c:forEach>	
 				</c:if>
 				
-				<c:if test="${empty produtoLista}">
-					<label>Nenhum produto cadastrado!!!</label>
+				<c:if test="${empty roupaLista}">
+					<label>Nenhuma roupa cadastrado!!!</label>
 					<c:set var="statusBotao" value="disabled"/>
 				</c:if>				
 			</div>

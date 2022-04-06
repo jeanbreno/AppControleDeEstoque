@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import erp.controle.estoque.model.domain.Usuario;
+import erp.controle.estoque.model.domain.Calca;
+import erp.controle.estoque.model.domain.Casaco;
 import erp.controle.estoque.model.domain.Roupa;
 import erp.controle.estoque.model.service.RoupaService;
 
@@ -22,44 +24,41 @@ public class RoupaController {
 //	private static List<Roupa> roupas = new ArrayList<Roupa>();
 
 	@GetMapping(value = "/roupas")
-	public String telaLista(Model model, Usuario usuario) {
+	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 		
-		model.addAttribute("roupaLista", roupaService.obterLista());
+		model.addAttribute("roupaLista", roupaService.obterLista(usuario));
 		
 		return "roupa/lista";
-	}
-	
-	@GetMapping(value = "/roupa")
-	public String telaCadastro() {
-		
-		return "roupa/cadastro";
-	}
-	
-	@PostMapping(value = "/roupa/incluir")
-	public String incluir(Roupa  roupa, Model model, Usuario usuario) {
-
-		roupaService.incluir(roupa);  
-		
-		model.addAttribute("mensagem", "["+roupa.getId()+"] Roupa " + roupa.getNome() + " cadastrado!");
-
-		return telaLista(model, usuario);
-		// return "redirect:/roupas";
-		// return telaConfirmacao();
-		// return "roupa/lista";
 	}
 	
 	@GetMapping(value = "/roupa/{id}/excluir")
 	public String excluir(Model model, @PathVariable Integer id, @SessionAttribute("user") Usuario usuario) {
 		
 		Roupa roupa = roupaService.obterPorId(id);
+		
+		String tipoRoupa = obterTipoRoupa(roupa);
 				
 		if(roupa != null) {			
 			roupaService.excluir(id);			
-			model.addAttribute("mensagem", "O roupa "+roupa.getNome()+" foi excluído com sucesso!");
+			model.addAttribute("mensagem", tipoRoupa + " " +roupa.getNome()+" foi excluído com sucesso!");
 		} else {
 			model.addAttribute("mensagem", "Roupa não existente. Impossível realizar exclusão!");			
 		}
 		
 		return telaLista(model, usuario);
+	}
+	
+	private String obterTipoRoupa(Roupa roupa) {
+		String tipoRoupa = null;
+		
+		if(roupa instanceof Calca) {
+			tipoRoupa = "calca";
+		}else if (roupa instanceof Casaco) {
+			tipoRoupa = "casaco";
+		}else {
+			tipoRoupa = "camisa";
+		}
+		
+		return tipoRoupa;
 	}
 }

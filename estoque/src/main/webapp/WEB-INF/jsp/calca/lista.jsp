@@ -48,6 +48,7 @@
 </style>
 </head>
 <body>
+
 	<header class="masthead">
 		<div class="container px-4 px-lg-5 h-100">
 			<c:import url="/WEB-INF/jsp/menu-voltar.jsp" />
@@ -56,10 +57,10 @@
 
 	<div class="container">
 
-		<h4>Cadastramento de pedidos:</h4>
+		<h4>Cadastramento de calcas:</h4>
 
-		<form action="/pedido" method="get">
-			<button type="submit">Novo pedido</button>
+		<form action="/calca" method="get">
+			<button type="submit">Nova calca</button>
 		</form>
 
 		<c:if test="${not empty mensagem}">
@@ -70,52 +71,69 @@
 		</c:if>
 
 
-
-
-		<c:if test="${not empty pedidoLista}">
-			<p>Quantidade de pedidos cadastrados: ${pedidoLista.size()}</p>
+		<c:if test="${not empty calcaLista}">
+			<p>Quantidade de calcas cadastradas: ${calcaLista.size()}</p>
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Descrição</th>
-						<th>Numero do Pedido</th>
-						<th>Data</th>
-						<th>Loja</th>
-						<th>Roupas</th>
+						<th>ID</th>
+						<th>Nome</th>
+						<th>Descricao</th>
+						<th>Valor</th>
+						<th>Disponibilidade</th>
+						<th>Tamanho</th>
+						<th>Quantidade</th>
+						<th>Marca</th>
+						<th>Especial</th>
+						<th>Secao</th>
+						<th>Estilo</th>
+						<th>ComCinto</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="p" items="${pedidoLista}">
+					<c:forEach var="c" items="${calcaLista}">
 						<tr>
-							<td>${p.descricao}</td>
-							<td>${p.numeroPedido}</td>
-							<td>${p.data}</td>
-							<td>${p.loja.nome}</td>
-							<td>${p.roupas.size()}</td>
-							<td><a href="/pedido/${p.id}/excluir">Excluir</a></td>
+							<td>${c.id}</td>
+							<td>${c.nome}</td>
+							<td>${c.descricao}</td>
+							<td>${c.valor}</td>
+							<td>${c.disponibilidade}</td>
+							<td>${c.tamanho}</td>
+							<td>${c.quantidade}</td>
+							<td>${c.marca}</td>
+							<td>${c.especial}</td>
+							<td>${c.secao}</td>
+							<td>${c.estilo}</td>
+							<td>${c.comCinto}</td>
+							<td><a href="/calca/${c.id}/excluir">Excluir</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 				<tfoot>
 					<tr>
-						<th>Descrição</th>
-						<th>Numero do Pedido</th>
-						<th>Data</th>
-						<th>Loja</th>
-						<th>Roupas</th>
+						<th>ID</th>
+						<th>Nome</th>
+						<th>Descricao</th>
+						<th>Valor</th>
+						<th>Disponibilidade</th>
+						<th>Tamanho</th>
+						<th>Quantidade</th>
+						<th>Marca</th>
+						<th>Especial</th>
+						<th>Secao</th>
+						<th>Estilo</th>
+						<th>ComCinto</th>
 						<th></th>
 					</tr>
 				</tfoot>
 			</table>
 		</c:if>
 
-		<c:if test="${empty pedidoLista}">
-			<p>Não existem pedidos cadastrados!!!</p>
+		<c:if test="${empty calcaLista}">
+			<p>Não existem calcas cadastradas!!!</p>
 		</c:if>
 	</div>
-
-
 	<script>
 			var close = document.getElementsByClassName("closebtn");
 			var i;

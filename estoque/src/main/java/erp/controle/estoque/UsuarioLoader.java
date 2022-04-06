@@ -30,7 +30,7 @@ public class UsuarioLoader implements ApplicationRunner {
 		if(usuario == null) {
 			Endereco endereco = new Endereco();
 			endereco.setBairro("Admin Bairro");
-			endereco.setCep("99.999-999");
+			endereco.setCep("20.010-020");
 			endereco.setComplemento("Admin Complemento");
 			endereco.setLocalidade("Admin Localidade");
 			endereco.setLogradouro("Admin Logradouro");

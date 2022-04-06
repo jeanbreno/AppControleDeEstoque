@@ -11,14 +11,14 @@
 
 	<header class="masthead">
     <div class="container px-4 px-lg-5 h-100">
-	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+	<c:import url="/WEB-INF/jsp/menu-voltar.jsp"/>
 	</div>
 	</header>
 
 	<div class="container">
 
 		<form action="/loja/incluir" method="post">
-			<h2>Cadastramento de Solicitantes</h2>
+			<h2>Cadastramento de Lojas</h2>
 		
 			<div class="form-group">
 				<label>Nome:</label>

@@ -10,7 +10,7 @@
 <body>
 	<header class="masthead">
     <div class="container px-4 px-lg-5 h-100">
-	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+	<c:import url="/WEB-INF/jsp/menu-voltar.jsp"/>
 	</div>
 	</header>
 
@@ -19,7 +19,7 @@
 		<form action="/cep" class="form-inline" method="post">	
 			<div class="form-group">
 				<label>Cep:</label>
-				<input type="text" class="form-control" name="cep" value="24.123-45"> 
+				<input type="text" class="form-control" name="cep" value="20010020"> 
 			</div>
 			
 			<button type="submit" class="btn btn-primary">Buscar</button>
@@ -30,17 +30,17 @@
 		
 			<div class="form-group">
 				<label>Nome:</label>
-				<input type="text" class="form-control" name="nome" value="Elberth L C Moraes"> 
+				<input type="text" class="form-control" name="nome" value="Eme J"> 
 			</div>
 			
 			<div class="form-group">
 				<label>E-mail:</label>
-				<input type="email" class="form-control" name="email" value="elberth.moraes@prof.infnet.edu.br">
+				<input type="email" class="form-control" name="email" value="eme@gmail.com">
 			</div>
 			
 			<div class="form-group">
 				<label>Senha:</label>
-				<input type="password" class="form-control" name="senha" value="123"> 
+				<input type="password" class="form-control" name="senha" value="1234"> 
 			</div>
 			
 			<c:import url="/WEB-INF/jsp/endereco.jsp"/>
