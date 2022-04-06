@@ -22,17 +22,17 @@
 		
 						<div class="form-group">
 				<label>Nome:</label>
-				<input type="text" class="form-control" name="nome" value="Calca Nike lT"> 
+				<input type="text" class="form-control" name="nome" value="Casaco Branco FLAMENGO"> 
 			</div>
 		
 			<div class="form-group">
 				<label>Descrição:</label>
-				<input type="text" class="form-control" name="descricao" value="Calça preta com elastico e brasao"> 
+				<input type="text" class="form-control" name="descricao" value="Casaco BRANCO brasao Flamengo"> 
 			</div>
 
 			<div class="form-group">
 				<label>Valor:</label>
-				<input type="text" class="form-control" name="valor" value="99"> 
+				<input type="text" class="form-control" name="valor" value="500"> 
 			</div>
 
 			<div class="form-group">
@@ -42,7 +42,7 @@
 
 			<div class="form-group">
 				<label>Tamanho:</label>
-				<input type="text" class="form-control" name="tamanho" value="GG"> 
+				<input type="text" class="form-control" name="tamanho" value="G"> 
 			</div>
 			<div class="form-group">
 				<label>Quantidade:</label>
@@ -51,7 +51,7 @@
 			
 			<div class="form-group">
 				<label>Marca:</label>
-				<input type="text" class="form-control" name="marca" value="NIKE"> 
+				<input type="text" class="form-control" name="marca" value="Adidas"> 
 			</div>
 			<div class="form-group">
 				<label>Secao:</label>
