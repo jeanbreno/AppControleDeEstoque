@@ -18,7 +18,7 @@ public class RoupaService{
 	//public Roupa roupa;
 	
 	public Collection<Roupa> obterLista(Usuario usuario) {
-		return (Collection<Roupa>) roupaRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "descricao")); 
+		return (Collection<Roupa>) roupaRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome")); 
 	}	
 
 	public Collection<Roupa> obterLista() {
@@ -29,8 +29,8 @@ public class RoupaService{
 		return (int) roupaRepository.count();
 	}
 	
-	public Roupa incluir(Roupa roupa){
-		return roupaRepository.save(roupa);
+	public void incluir(Roupa roupa){
+		roupaRepository.save(roupa);
 		}
 	
 	public void excluir(Integer id) { 

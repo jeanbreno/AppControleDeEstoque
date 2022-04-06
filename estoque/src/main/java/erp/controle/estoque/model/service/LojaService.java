@@ -16,11 +16,11 @@ public class LojaService {
 	@Autowired
 	private LojaRepository lojaRepository;
 
-	public Collection<Loja> obterLista(Usuario usuario){		
+	public Collection<Loja> obterLista(Usuario usuario){
 		return (Collection<Loja>) lojaRepository.obterLista(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome"));
 	}
 
-	public Collection<Loja> obterLista(){		
+	public Collection<Loja> obterLista(){
 		return (Collection<Loja>) lojaRepository.findAll();
 	}
 	
